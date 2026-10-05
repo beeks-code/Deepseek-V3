@@ -8,7 +8,7 @@ GPT_CONFIG_124M = {
     "qkv_bias": False,     # Query-key-value bias
 
     # Simple DeepSeek-style extras
-    "n_experts": 4,        # Keep this low for a small local model
+    "n_experts": 2,        # Keep this low for a small local model
     "top_k": 2,            # Number of experts selected per token
     "d_cache": 192,        # Compressed latent KV size for MLHA
     "rope_theta": 10000.0, # RoPE base
