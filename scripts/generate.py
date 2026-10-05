@@ -3,7 +3,6 @@ import sys
 from pathlib import Path
 
 import torch
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
@@ -22,7 +21,7 @@ def main():
     try:
         import tiktoken
     except ImportError as exc:
-        raise SystemExit("Install tiktoken to use this script: pip install tiktoken") from exc
+        raise SystemExit("Please try to install tiktoken") from exc
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     tokenizer = tiktoken.get_encoding("gpt2")
