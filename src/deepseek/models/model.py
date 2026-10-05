@@ -11,7 +11,8 @@ class MultiTokenPredictionHead(nn.Module):
         self.heads = nn.ModuleList(
             nn.Linear(cfg["emb_dim"], cfg["vocab_size"], bias=False)
             for _ in range(cfg["mtp_depth"]))
-
+## simple MTP class no Merge and project layer
+## Might work poorly
     def forward(self, x):
         return [head(x) for head in self.heads]
 
