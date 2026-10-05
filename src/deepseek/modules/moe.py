@@ -22,7 +22,7 @@ class Router(nn.Module):
         super().__init__()
         self.top_k=cfg["top_k"]
         self.router=nn.Linear(cfg["emb_dim"],cfg["n_experts"])
-        self.noise=nn.Linear(cfg["emb_dim"],cfg["n_experts"])
+        self.noise=nn.Linear(cfg["emb_dim"],cfg["n_experts"]) ## Gaussian Noise
     def forward(self,x):
         selector=self.router(x)
         if self.training:

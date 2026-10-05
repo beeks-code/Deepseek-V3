@@ -2,8 +2,6 @@ import torch
 import torch.nn as nn
 
 from .rope import apply_rope, build_rope_cache
-
-
 class MHLA(nn.Module):
     def __init__(self, d_model, d_cache, context_length, dropout, n_heads, qkv_bias=False, rope_theta=10000.0):
         super().__init__()
