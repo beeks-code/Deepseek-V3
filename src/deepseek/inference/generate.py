@@ -39,6 +39,5 @@ def generate(model, input_ids, max_new_tokens, context_size, temperature=0.8, to
 def text_to_token_ids(text, tokenizer):
     return torch.tensor(tokenizer.encode(text)).unsqueeze(0)
 
-
 def token_ids_to_text(token_ids, tokenizer):
     return tokenizer.decode(token_ids.squeeze(0).tolist())

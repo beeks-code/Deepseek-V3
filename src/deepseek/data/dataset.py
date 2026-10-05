@@ -1,7 +1,5 @@
 import torch
 from torch.utils.data import DataLoader, Dataset
-
-
 class GPTDataset(Dataset):
     def __init__(self, text, tokenizer, context_size, stride):
         self.input_ids = []
@@ -20,7 +18,6 @@ class GPTDataset(Dataset):
     def __getitem__(self, index):
         return self.input_ids[index], self.target_ids[index]
 
-
 def create_dataloader(
     text,
     tokenizer,
@@ -29,7 +26,7 @@ def create_dataloader(
     stride=128,
     shuffle=True,
     drop_last=True,
-    num_workers=0,
+    num_workers=3,
 ):
     dataset = GPTDataset(text, tokenizer, context_size, stride)
     return DataLoader(
