@@ -1,0 +1,31 @@
+from src.deepseek import (
+    GPT_CONFIG_124M,
+    DeepSeekBlock,
+    DeepSeekV3,
+    Expert,
+    GELU,
+    MHLA,
+    MLHA,
+    MultiTokenPredictionHead,
+    Router,
+    SparseMOE,
+    dequantize_tensor,
+    quantize_linear_weights,
+    quantize_tensor,
+)
+
+__all__ = [
+    "GPT_CONFIG_124M",
+    "DeepSeekBlock",
+    "DeepSeekV3",
+    "MultiTokenPredictionHead",
+    "GELU",
+    "Expert",
+    "Router",
+    "SparseMOE",
+    "MHLA",
+    "MLHA",
+    "quantize_tensor",
+    "dequantize_tensor",
+    "quantize_linear_weights",
+]
